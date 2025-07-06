@@ -14,40 +14,28 @@
             text-align: center;
             padding: 8px;
         }
-        th {
-            background-color: #e8e8e8;
-            font-weight: bold;
-        }
-
-        .category {
-          background-color: #e8e8e8;
-          font-weight: bold;
-        }
-
-        .subcategory {
-          background-color: #e8e8e8;
-          font-weight: bold;
-        }
-
-        .planet-name {
-          background-color: #e8e8e8;
-          font-weight: bold;
-          border-left: 2px solid #000;
-          border-right: 2px solid #000;
-        }
-
-        .data-row-odd .planet-data {
+        tr:nth-child(even) {
           background-color: #f5f5f5;
         }
 
-        .data-row-even .planet-data {
-          background-color: #fff;
-        }
+       tbody>tr:first-child>:nth-last-child(10){
+         border-top: 3px solid #000;
+       }
 
-        /* .first-data-row .planet-name,
-        .first-data-row .planet-data {
-            border-top: 2px solid #ddd;
-        } */
+       tbody>tr:last-child>td:nth-last-child(10){
+        border-bottom: 3px solid #000;
+       }
+
+       th:nth-last-child(10), td:nth-last-child(10) {
+        border-inline: 3px solid #000;
+       }
+
+       th:not(:first-child), td:nth-last-child(n+10){
+        font-weight: bold;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: #ebebeb;
+       }
     </style>
   </head>
   <body>
@@ -61,9 +49,8 @@
       </caption>
       <thead>
         <tr>
-            <th colspan="2" style="background-color: #f5f5f5;">
-            </th>
-            <th style="border-top: #000 2px solid; border-left: #000 2px solid; border-right: #000 2px solid;">Name</th>
+            <th colspan="2" ></th>
+            <th>Name</th>
             <th>Mass<br />(10<sup>24</sup>kg)</th>
             <th>Diameter<br />(km)</th>
             <th>Density<br />(kg/m<sup>3</sup>)</th>
@@ -77,123 +64,123 @@
       </thead>
       <tbody>
          <!-- Terrestrial planets -->
-        <tr class="data-row-odd first-data-row">
-            <td class="category" colspan="2" rowspan="4">Terrestrial planets</td>
+        <tr>
+            <td colspan="2" rowspan="4">Terrestrial planets</td>
 
-            <td class="planet-name">Mercury</td>
-            <td class="planet-data">0.330</td>
-            <td class="planet-data">4,879</td>
-            <td class="planet-data">5427</td>
-            <td class="planet-data">3.7</td>
-            <td class="planet-data">4222.6</td>
-            <td class="planet-data">57.9</td>
-            <td class="planet-data">167</td>
-            <td class="planet-data">0</td>
-            <td class="planet-data">Closest to the Sun</td>
+            <td>Mercury</td>
+            <td >0.330</td>
+            <td >4,879</td>
+            <td >5427</td>
+            <td >3.7</td>
+            <td >4222.6</td>
+            <td >57.9</td>
+            <td >167</td>
+            <td >0</td>
+            <td >Closest to the Sun</td>
         </tr>
-        <tr class="data-row-even">
-            <td class="planet-name">Venus</td>
-            <td class="planet-data">4.87</td>
-            <td class="planet-data">12,104</td>
-            <td class="planet-data">5243</td>
-            <td class="planet-data">8.9</td>
-            <td class="planet-data">2802.0</td>
-            <td class="planet-data">108.2</td>
-            <td class="planet-data">464</td>
-            <td class="planet-data">0</td>
-            <td class="planet-data"></td>
+        <tr>
+            <td>Venus</td>
+            <td >4.87</td>
+            <td >12,104</td>
+            <td >5243</td>
+            <td >8.9</td>
+            <td >2802.0</td>
+            <td >108.2</td>
+            <td >464</td>
+            <td >0</td>
+            <td ></td>
         </tr>
-        <tr class="data-row-odd">
-            <td class="planet-name">Earth</td>
-            <td class="planet-data">5.97</td>
-            <td class="planet-data">12,756</td>
-            <td class="planet-data">5514</td>
-            <td class="planet-data">9.8</td>
-            <td class="planet-data">24.0</td>
-            <td class="planet-data">149.6</td>
-            <td class="planet-data">15</td>
-            <td class="planet-data">1</td>
-            <td class="planet-data">Our world</td>
+        <tr>
+            <td>Earth</td>
+            <td >5.97</td>
+            <td >12,756</td>
+            <td >5514</td>
+            <td >9.8</td>
+            <td >24.0</td>
+            <td >149.6</td>
+            <td >15</td>
+            <td >1</td>
+            <td >Our world</td>
         </tr>
-        <tr class="data-row-even">
-            <td class="planet-name">Mars</td>
-            <td class="planet-data">0.642</td>
-            <td class="planet-data">6,792</td>
-            <td class="planet-data">3933</td>
-            <td class="planet-data">3.7</td>
-            <td class="planet-data">24.7</td>
-            <td class="planet-data">227.9</td>
-            <td class="planet-data">-65</td>
-            <td class="planet-data">2</td>
-            <td class="planet-data">the red planet</td>
+        <tr>
+            <td>Mars</td>
+            <td >0.642</td>
+            <td >6,792</td>
+            <td >3933</td>
+            <td >3.7</td>
+            <td >24.7</td>
+            <td >227.9</td>
+            <td >-65</td>
+            <td >2</td>
+            <td >the red planet</td>
         </tr>
 
         <!-- Jovian planets -->
-        <tr class="data-row-odd">
-            <td class="category" rowspan="4">Jovian planets</td>
-            <td class="subcategory" rowspan="2">Gas giants</td>
-            <td class="planet-name">Jupiter</td>
-            <td class="planet-data">1898</td>
-            <td class="planet-data">142,984</td>
-            <td class="planet-data">1326</td>
-            <td class="planet-data">23.1</td>
-            <td class="planet-data">9.9</td>
-            <td class="planet-data">778.6</td>
-            <td class="planet-data">-110</td>
-            <td class="planet-data">67</td>
-            <td class="planet-data">The largest planet</td>
+        <tr>
+            <td rowspan="4">Jovian planets</td>
+            <td rowspan="2">Gas giants</td>
+            <td>Jupiter</td>
+            <td >1898</td>
+            <td >142,984</td>
+            <td >1326</td>
+            <td >23.1</td>
+            <td >9.9</td>
+            <td >778.6</td>
+            <td >-110</td>
+            <td >67</td>
+            <td >The largest planet</td>
         </tr>
-        <tr class="data-row-even">
-            <td class="planet-name">Saturn</td>
-            <td class="planet-data">568</td>
-            <td class="planet-data">120,536</td>
-            <td class="planet-data">687</td>
-            <td class="planet-data">9.0</td>
-            <td class="planet-data">10.7</td>
-            <td class="planet-data">1433.5</td>
-            <td class="planet-data">-140</td>
-            <td class="planet-data">62</td>
-            <td class="planet-data"></td>
+        <tr >
+            <td>Saturn</td>
+            <td >568</td>
+            <td >120,536</td>
+            <td >687</td>
+            <td >9.0</td>
+            <td >10.7</td>
+            <td >1433.5</td>
+            <td >-140</td>
+            <td >62</td>
+            <td ></td>
         </tr>
-        <tr class="data-row-odd">
-            <td class="subcategory" rowspan="2">Ice giants</td>
-            <td class="planet-name">Uranus</td>
-            <td class="planet-data">86.8</td>
-            <td class="planet-data">51,118</td>
-            <td class="planet-data">1271</td>
-            <td class="planet-data">8.7</td>
-            <td class="planet-data">17.2</td>
-            <td class="planet-data">2872.5</td>
-            <td class="planet-data">-195</td>
-            <td class="planet-data">27</td>
-            <td class="planet-data"></td>
+        <tr >
+            <td rowspan="2">Ice giants</td>
+            <td>Uranus</td>
+            <td >86.8</td>
+            <td >51,118</td>
+            <td >1271</td>
+            <td >8.7</td>
+            <td >17.2</td>
+            <td >2872.5</td>
+            <td >-195</td>
+            <td >27</td>
+            <td ></td>
         </tr>
-        <tr class="data-row-even">
-            <td class="planet-name">Neptune</td>
-            <td class="planet-data">102</td>
-            <td class="planet-data">49,528</td>
-            <td class="planet-data">1638</td>
-            <td class="planet-data">11.0</td>
-            <td class="planet-data">16.1</td>
-            <td class="planet-data">4495.1</td>
-            <td class="planet-data">-200</td>
-            <td class="planet-data">14</td>
-            <td class="planet-data"></td>
+        <tr>
+            <td>Neptune</td>
+            <td >102</td>
+            <td >49,528</td>
+            <td >1638</td>
+            <td >11.0</td>
+            <td >16.1</td>
+            <td >4495.1</td>
+            <td >-200</td>
+            <td >14</td>
+            <td ></td>
         </tr>
 
         <!-- Dwarf planets -->
-        <tr class="data-row-odd">
-            <td class="category" colspan="2">Dwarf planets</td>
-            <td class="planet-name" style="border-bottom: #000 2px solid;">Pluto</td>
-            <td class="planet-data">0.0146</td>
-            <td class="planet-data">2,370</td>
-            <td class="planet-data">2095</td>
-            <td class="planet-data">0.7</td>
-            <td class="planet-data">153.3</td>
-            <td class="planet-data">5906.4</td>
-            <td class="planet-data">-225</td>
-            <td class="planet-data">5</td>
-            <td class="planet-data">declassified as<br> planet in 2006, but<br> this <a href="https://www.usatoday.com/story/tech/2014/10/02/pluto-planet-solar-sysytem/1578959/">remains<br>controversial</a>.</td>
+        <tr>
+            <td  colspan="2">Dwarf planets</td>
+            <td >Pluto</td>
+            <td >0.0146</td>
+            <td >2,370</td>
+            <td >2095</td>
+            <td >0.7</td>
+            <td >153.3</td>
+            <td >5906.4</td>
+            <td >-225</td>
+            <td >5</td>
+            <td >declassified as<br> planet in 2006, but<br> this <a href="https://www.usatoday.com/story/tech/2014/10/02/pluto-planet-solar-sysytem/1578959/">remains<br>controversial</a>.</td>
         </tr>
       </tbody>
     </table>
