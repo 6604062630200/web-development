@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab3 no 1.1 | Input type</title>
+</head>
+<body>
+    <form action="">
+       <p>1. ชื่อเต็ม/ย่อของสาขาวิชา</p>
+       <input type="text" name="major" id="major" placeholder="สาขา" required>
+
+       <p>2. จำนวนเงินที่จะโอน</p>
+       <input type="number" name="transfer_amount" id="transfer_amount" placeholder="จำนวนเงิน" required>
+
+       
+        <p>3. อาหาร 5 ชนิดที่ชื่นชอบจากมากไปน้อย</p>
+        <textarea name="fav_foods" id="fav_foods" placeholder="1. ..., 2. ..., 3. ..., 4. ..., 5. ..." required></textarea>
+
+        <p>4. ค่าไฟฟ้า 3 เดือนที่ผ่านมา</p>
+        <input type="number" name="bill_month1" id="elec_bill" placeholder="ค่าไฟฟ้าเดื่อนที่ 1" required>
+        <input type="number" name="bill_month2" id="elec_bill" placeholder="ค่าไฟฟ้าเดื่อนที่ 2" required>
+        <input type="number" name="bill_month3" id="elec_bill" placeholder="ค่าไฟฟ้าเดื่อนที่ 3" required>
+
+        <p>5. รหัสบัตรประชาชน</p>
+        <input type="text" name="id_card" id="id_card" placeholder="รหัสบัตรประชาชน 13 หลัก" required>
+
+        <p>6. ความพึงพอใจของหนังสือเล่มนี้</p>
+        <input type="range" name="satisfaction" id="satisfaction" min="1" max="5" required>
+
+        <p>7. อาการป่วย</p>
+        <textarea name="ill" id="ill" rows="3" cols="40" required></textarea>
+
+        <p>8. ในช่วง 3เดือนที่ผ่านมา เคยได้รับวัคซีนหรือไม่</p>
+        <input type="radio" name="vaccine" value="Yes">เคย
+        <input type="radio" name="vaccine" value="No">ไม่เคย
+
+        <p>9. เวลาเริ่มเเข้าเรียนและสิ้นสุดการเรียน</p>
+        เริ่ม: <input type="time" name="start_time" required>
+        สิ้นสุด: <input type="time" name="end_time" required>
+
+        <p>10. วันเวลาที่ต้องไปพบแพทย์</p>
+        <input type="datetime-local" name="appointment" id="appointment" required>
+        
+    </form>
+</body>
+</html>

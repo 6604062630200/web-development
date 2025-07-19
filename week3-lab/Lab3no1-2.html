@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab3 no 1.2 | pattern attribute</title>
+</head>
+<body>
+    <form action="">
+        <p>11. รหัสผ่าน 5 อัขระเป็นต้นไป ที่ต้องประกอบด้วยอักขระตัวใหญ่ ตัวเล็กและตัวเลข อย่างน้อยชนิดละ 1 อักขระ</p>
+        <input type="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{5,}$" placeholder="5 อักขระขึ้นไป" required>
+        <p>12. บ้านเลขที่</p>
+        <input type="text" name="address" pattern="^\d+(\/\d+)?$" required>
+        <p>13. รหัสสินค้า 3 ตัวแรกเป็นอักขระตัวใหญ่ตามด้วยตัวเลข 2 ตัวเท่านั้น</p>
+        <input type="text" name="product-id" pattern="^[A-Z]{3}\d{2}$" required>
+        <p>14: กรอกชื่อ นามสกุล ด้วยภาษาไทยเท่านั้น</p>
+        <input type="text" name="name" pattern="[ก-๙]+\s[ก-๙]+" required>
+
+        <br>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3 no2</title>
+    <style>
+        input[required]::after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h1>แบบฟอร์มจองทัวร์</h1>
+
+        <fieldset>
+            <legend>ข้อมูลทั่วไป</legend>
+            <label for="name">ชื่อ-สกุล:</label><br>
+            <input type="text" name="name" id="name" placeholder="กรอกชื่อ-สกุล" required> *<br>
+
+            <label for="email">Email :</label><br>
+            <input type="email" name="email" id="email" required> *<br>
+
+            <label for="telephone">โทรศัพท์ :</label><br>
+            <input type="tel" name="telephone" id="telephone" value="+66" pattern="\+66\d{9}" required> *<br>
+
+            <label for="addres">ที่อยู่:</label><br>
+            <textarea name="address" id="addres"></textarea><br>
+
+            <label for="postal-code">รหัสไปรษณีย์:</label>
+            <input type="text" name="postal-code" id="postal-code" pattern="\d{5}"><br>
+
+            <label for="user-pic">รูปผู้จอง :</label>
+            <input type="file" name="user-pic" id="user-pic">
+        </fieldset>
+
+        <button type="submit">จอง</button>
+    </form>
+</body>
+</html>
