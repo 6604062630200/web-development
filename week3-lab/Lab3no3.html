@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3no3</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+        td {
+            border: 1px solid black;
+        }
+        tr {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- a -->
+     <form action="./Lab3no3-login-success.html">
+            <fieldset>
+                <h1>เข้าสู่ระบบ</h1>
+                <table>
+                <tr>
+                    <td><label for="username">Username:</label></td>
+                    <td><input type="text" name="username" id="username" required autofocus></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" name="password" id="password" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="number-captcha">กรุณาพิมพ์ตามตัวเลขที่ปรากฎ:</label><br>
+                    1559 <br>
+                    <input type="text" name="number-captcha" id="number-captcha" pattern="1559" required>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <button type="submit"><img src="./loginBtn.png" alt="login" width="60"></button>
+            </fieldset>
+     </form>
+</body>
+</html>
