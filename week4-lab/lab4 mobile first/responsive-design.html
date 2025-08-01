@@ -4,6 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .flexible {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .product img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: gray;
+            text-align: left;
+            padding: 20px 40px;
+        }
+
+        .wrap {
+            background-color:darkblue;
+            display: flex;
+            justify-content: center;
+            border-radius: 4px;
+            
+        }
+
+        .wrap a {
+            text-decoration: none;
+        }
+
+        .botton {
+            color: white;
+            padding: 15px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .botton::before {
+            content: "\f217";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 2px;
+        }
+
+
+
+        @media screen and (max-width:600px) {
+            .flexible {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content {
+                padding: 10px 20px;
+            }
+
+            .wrap {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .botton {
+                padding: 10px 30px;
+            }
+            
+        }
+    </style>
+    
 </head>
 
 <body>
