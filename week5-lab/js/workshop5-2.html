@@ -1,0 +1,43 @@
+
+<html >
+<head>
+   <script>
+    let calAge = function(birthYear) {
+        let now = new Date()
+        year = now.getFullYear() - parseInt(birthYear)
+        return year
+    }
+
+        let student = [
+            {
+                id: 62001,
+                thainame: 'มานะ',
+                fullname: 'mana',
+                birthYear: '2002',
+                age: calAge(birthYear)
+            },
+            {
+                id: 62002,
+                fullname: 'manee',
+                birthYear: '2000',
+                age: calAge(birthYear)
+            }
+        ]
+
+        
+
+        console.log(student[0].fullname)
+        console.log(student[1].id)
+        console.log(student[0].birth)
+        student[1].fullname = 'phiti'
+        console.log(student[1].fullname)
+        console.log(student[1].birth)
+        console.table(student)
+        console.log("mana age:",student[0].age)
+        console.log("manee age:",student[1].age)
+   </script>
+</head>
+<body>
+    
+</body>
+</html>
