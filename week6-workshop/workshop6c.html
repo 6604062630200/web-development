@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addData(){
+            let name = document.getElementById("name").value
+            let address = document.getElementById("address").value
+            let tel = document.getElementById("tel").value
+
+            let tdName = document.createElement("td")
+            tdName.innerText = name
+            let tdAddress = document.createElement("td")
+            tdAddress.inner = address
+            let tdTel = document.createElement("td")
+            tdTel.inner = tel
+
+            let rowData  = document.createElement("tr")
+            rowData.appendChild(tdName)
+            rowData.appendChild(tdAddress)
+            rowData.appendChild(tdTel)
+
+            let table = document.getElementById("table-data")
+            table.appendChild(rowData)
+        }
+    </script>
+</head>
+<body>
+    <form>
+        ชื่อลูกค้า:<input type="text" name="" id="name"><br>
+        ที่อยู่:<input type="text" name="" id="address"><br>
+        โทรศัพท์:<input type="text" name="" id="tel"><br>
+        <input type="button" onclick="addData()" value="เพิ่ม">
+    </form>
+    <table id="table-data">
+        <tr>
+            <th>ชื่อลูกค้า</th>
+            <th>ที่อยู่ลูกค้า</th>
+            <th>โทรศัพท์</th>
+        </tr>
+    </table>
+</body>
+</html>
