@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let cars = new Array('Audi','BMW','Ford','Opel','Toyota');
+            let days = new Array('Monday', 'Wednesday','Friday');
+            let jobs = new Array('engineer ','salesman');
+
+            function p1(nC) {
+                while (co.options.length) 
+                    co.options[0] = null;
+                for (let i = 0; i < nC.length; i++)
+                    co.options[co.length] = new Option(nC[i], nC[i]);
+            }
+
+            let co = document.forms[0].combo1;
+
+            let carRadio = document.getElementById("carRadio")
+            let daysRadio = document.getElementById("daysRadio")
+            let jobsRadio = document.getElementById("jobsRadio")
+
+            carRadio.addEventListener('click',function(){
+                p1(cars)
+            })
+            daysRadio.addEventListener('click',function(){
+                p1(days)
+            })
+            jobsRadio.addEventListener('click',function(){
+                p1(jobs)
+            })
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="radio" name="r" value="r1" id="carRadio"><lable>cars</lable>
+        <input type="radio" name="r" value="r2" id="daysRadio"><lable>days</lable>
+        <input type="radio" name="r" value="r3" id="jobsRadio"><lable>jobs</lable>
+        <hr>
+        <select size="1" name="combo1" style="width:150px">
+            <option value="">choose radio</option>
+        </select>
+    </form>
+</body>
+</html>

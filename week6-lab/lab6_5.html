@@ -1,0 +1,32 @@
+<!-- ตัวอย่างที 2: การรับค่าจาก input และแสดงผล -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างที่ 2</title>
+    <script>
+        window.onload = function(){
+            // ฟังก์ชันรับค่าจาก input และแสดงคําทักทาย
+            function greetUser() {
+                // รับค่าจาก input
+                let name = document.getElementById("nameInput").value;
+                // ตรวจสอบว่ามีการใสชื่อหรือไม่
+                if (name) {
+                    document.getElementById("greeting").textContent ="สวัสดีคุณ " + name;
+                } else {
+                    alert("กรุณาใสชื่ก่อนครับ/ค่ะ");
+                }
+            }
+            greetBtn = document.getElementById("greetBtn")
+            greetBtn.addEventListener("click",greetUser)
+        }
+    </script>
+</head>
+<body>
+    <!-- สร้าง input field และปุ่มสำหรับรับชื่อ -->
+    <input type="text" id="nameInput" placeholder="กรุณาใส่ชื่อ" />
+
+    <button id="greetBtn">ทักทาย</button>
+
+    <p id="greeting"></p>
+</body>
+</html>
