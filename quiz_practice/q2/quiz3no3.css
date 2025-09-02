@@ -1,0 +1,7 @@
+input[type="text"]:invalid {
+  background-color: red;
+}
+
+input[type="text"]:valid {
+  background-color: green;
+}
