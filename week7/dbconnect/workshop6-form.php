@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop 3</title>
+    <title>Workshop 6 FORM</title>
+    <script>
+        function confirmDel(username) {
+            let ans = confirm("ต้องการลบสมาชิก" + username)
+            if(ans == true){
+                document.location = "workshop6-backend.php?username=" + username
+            }
+        }
+    </script>
 </head>
 <body>
     <?php 
@@ -18,10 +26,11 @@
         อีเมล์: <?=$row["email"]?> <br>
         <img src="img/<?=$i ?>.jpg" width="100"> <br>
         <!-- link to detail page(workshop5) -->
-        <div>
+        <div className="display:flex">
             <a href="workshop5.php?username=<?=$row["username"]?>">
-        รายละเอียด  
-        </a>
+            รายละเอียด  
+            </a>
+            <button type="submit" onclick="confirmDel('<?=$row["username"]?>')">ลบ</button>
         </div>
         <hr>
         <?php $i++;?>
