@@ -20,6 +20,6 @@
     <title>ADDED SUCCESS</title>
 </head>
 <body>
-    เพิ่มสินค้าสำเร็จ 
+    เพิ่มสมาชิกสำเร็จ 
 </body>
 </html>

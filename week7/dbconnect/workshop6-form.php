@@ -26,7 +26,7 @@
         อีเมล์: <?=$row["email"]?> <br>
         <img src="img/<?=$i ?>.jpg" width="100"> <br>
         <!-- link to detail page(workshop5) -->
-        <div className="display:flex">
+        <div style="display:flex">
             <a href="workshop5.php?username=<?=$row["username"]?>">
             รายละเอียด  
             </a>

@@ -8,7 +8,7 @@
 
         ราคา: <input type="number" name="price"><br>
         <input type="file" name="image">
-        <input type="submit" value="เพิ่มสินค้า">
+        <input type="submit" value="เพิ่มสินค้า" accept="image/*">
     </form>
 </body>
 </html>

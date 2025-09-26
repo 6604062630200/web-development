@@ -22,6 +22,7 @@
                 <h2><?=$row["name"]?></h2><br>
                 ที่อยู่ <?=$row["address"]?><br>
                 อีเมลล์: <?=$row["email"]?><br>
+                เบอร์โทร: <?=$row["mobile"]?><br>
         </div>
     </div>
 </body>

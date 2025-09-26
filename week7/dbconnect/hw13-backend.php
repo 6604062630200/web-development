@@ -12,16 +12,17 @@
 
     // upload file
     if(move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)){
-        $stmt = $pdo->prepare("INSERT INTO product (pname, pdetail, price) VALUES (?, ?, ?)");
+        $stmt = $pdo->prepare("UPDATE product SET pname=?, pdetail=?, price=? WHERE pid=?");
         $stmt->bindParam(1, $_POST["pname"]);
         $stmt->bindParam(2, $_POST["pdetail"]);
         $stmt->bindParam(3, $_POST["price"]);
+        $stmt->bindParam(4, $_POST["pid"]);
 
         $stmt->execute();
-        $pid = $pdo->lastInsertId();
+        $pid = $_POST["pid"];
 
         // redirect
-        header("Location: hw10-insert-success.php?pid=$pid&img=" . urlencode($targetFile));
+        header("Location: hw13-update-success.php?pid=$pid&img=" . urlencode($targetFile));
         exit;
     }else{
         echo "อัปโหลดรูปสินค้าไม่สำเร็จ";

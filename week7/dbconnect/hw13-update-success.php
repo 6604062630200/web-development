@@ -14,10 +14,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW 10 - <?=$row["pname"]?> </title>
+    <title>HW 13 - <?=$row["pname"]?> </title>
 </head>
 <body>
     <div style="display:flex; gap:20px;">
+        แก้ไขสำเร็จ
         <?php if($img): ?>
             <img src="<?=$img?>">
         <?php endif; ?>
