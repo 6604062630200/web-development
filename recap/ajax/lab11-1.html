@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let xmlHttp;
+        function calculate(){
+            xmlHttp = new XMLHttpRequest()
+            xmlHttp.onreadystatechange = showResult
+            
+            let mango = document.getElementById("mango").value
+            let orange = document.getElementById("orange").value
+            let banana = document.getElementById("banana").value
+            let url = "lab11-1.php?mango=" + mango + "&orange=" + orange + "&banana=" + banana
+
+            xmlHttp.open("GET", url)
+            xmlHttp.send()
+        }
+
+        function showResult() {
+            console.log(xmlHttp.responseText)
+            if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+                document.getElementById("result").innerHTML = xmlHttp.responseText;
+            }
+        }
+    </script>
+</head>
+<body>
+    มะม่วง กก.ละ 30 บาท ขายได้ <input type="number" id="mango"> กก. <br>
+    ส้ม กก.ละ 70 บาท ขายได้ <input type="number" id="orange"> กก. <br>
+    กล้วย กก.ละ 30 บาท ขายได้ <input type="number" id="banana" onkeyup="calculate()"> กก. <br>
+    <span id="result" style="font-weight: 700;"></span>
+</body>
+</html>

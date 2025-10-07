@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result">
+
+    </div>
+</body>
+
+<script>
+    
+    function getData () {
+        let xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status && xhr.status == 200){
+                let objData = JSON.parse(xhr.responseText)
+                let table = document.createElement("table")
+                let tr = table.insertRow(-1)
+                tr.innerHTML = '<th>No.</th><th>ชื่อโรงพยาบาล</th><th>ขนาดใหญ่</th><th>ขนาดกลาง</th><th>ขนาดเล็ก</th>'
+
+                objData.features.forEach((hos, i) => {
+                    let trin = table.insertRow(-1)
+                    trin.innerHTML = `
+                        <td>${i + 1}</td>
+                        <td>${hos.properties.name}</td>
+                        <td>${hos.properties.num_bed > 90 ? '✓' : ''}</td>
+                        <td>${hos.properties.num_bed > 30 && hos.properties.num_bed <= 90 ? '✓' : ''}</td>
+                        <td>${hos.properties.num_bed <= 30 ? '✓' : ''}</td>
+                    `
+                })
+
+                document.getElementById("result").appendChild(table)
+            }
+        }
+
+        xhr.open("GET", "../json/priv_hos.json", true)
+        xhr.send()
+    }
+
+    window.onload = getData
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <input type="button" value="Click to Populate SELECT with JSON" onclick="populateSelect()">
+    </p>
+
+    <select id="sel" onchange="show(this)">
+        <option value="">--- Select ---</option>
+    </select>
+
+    <p id="msg"></p>
+</body>
+
+<script>
+    function populateSelect() {
+        // THE JSON ARRAY.
+        let birds = [
+            {"ID": "001", "Bird_Name": "Eurasian Collared-Dove"},
+            {"ID": "002", "Bird_Name": "Bald Eagle"},
+            {"ID": "003", "Bird_Name": "Cooper's Hawk"},
+        ];
+
+        let ele = document.getElementById("sel")
+        for (let i=0; i <birds.length; i++){
+            ele.innerHTML = ele.innerHTML + '<option value="' + birds[i].ID + '">' + birds[i].Bird_Name + '</option>'
+        }
+    }
+
+    function show(ele) {
+        let msg = document.getElementById('msg')
+        msg.innerHTML = 'Select Bird: <b>' + ele.options[ele.selectedIndex].text + '</b> </br>'
+        + 'ID: <b>' + ele.value + '</b>'
+    }
+</script>
+</html>

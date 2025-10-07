@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lab11-2.css">
+    <title>Document</title>
+    <script>
+        let xmlHttp1;
+        let xmlHttp2;
+        function checkUsernameDupe(){
+            document.getElementById("username").className = "thinking"
+            xmlHttp1 = new XMLHttpRequest()
+            xmlHttp1.onreadystatechange = showUsernameStatus
+
+            let username = document.getElementById("username").value
+            let email = document.getElementById("email").value
+
+            let url = "lab11-2.php?username=" + username
+            xmlHttp1.open("GET", url)
+            xmlHttp1.send()
+        }
+
+        function checkEmailDupe(){
+            document.getElementById("email").className = "thinking"
+            xmlHttp2 = new XMLHttpRequest()
+            xmlHttp2.onreadystatechange = showEmailStatus
+
+            let email = document.getElementById("email").value
+
+            let url = "lab11-2.php?email=" + email
+            xmlHttp2.open("GET", url)
+            xmlHttp2.send()
+        }
+
+        function showUsernameStatus(){
+            if (xmlHttp1.readyState == 4 && xmlHttp1.status == 200){
+                if(xmlHttp1.responseText == "okay"){
+                    document.getElementById("username").className = "approved"
+                }else{
+                    document.getElementById("username").className = "denied"
+                    document.getElementById("username").focus()
+                    document.getElementById("username").select()
+                }
+            }
+        }
+
+        function showEmailStatus(){
+            if (xmlHttp2.readyState == 4 && xmlHttp1.status == 200){
+                if(xmlHttp2.responseText == "okay"){
+                    document.getElementById("email").className = "approved"
+                }else{
+                    document.getElementById("email").className = "denied"
+                    document.getElementById("email").focus()
+                    document.getElementById("email").select()
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Username: <input type="text" id="username" onblur="checkUsernameDupe()" required><br>
+        First Name: <input type="text" id="firstName" required><br>
+        Last Name: <input type="text" id="lastName" required><br>
+        Email: <input type="email" id="email" onblur="checkEmailDupe()" required><br>
+    </form>
+</body>
+</html>

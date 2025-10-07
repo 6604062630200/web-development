@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let request
+        function send(){
+            request = new XMLHttpRequest();
+            request.onreadystatechange = showResult
+
+            let keyword = document.getElementById("keyword").value
+            let url = "productTable.php?keyword=" + keyword
+            request.open("GET", url, true)
+            request.send(null)
+        }
+
+        function showResult() {
+            if(request.readyState == 4 && request.state == 200){
+                document.getElementById("result").innerHTML = request.responseText
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="keyword" onkeyup="send()">
+    <div id="result"></div>
+</body>
+</html>

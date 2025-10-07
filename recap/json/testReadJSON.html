@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function getData(){
+            let response = await fetch("priv_hos.json")
+            let rawData = await response.text()
+            // console.log(rawData)
+            // console.log(response)
+            let objData = JSON.parse(rawData)
+            console.log(objData)
+            console.log(objData.features)
+
+            let result = document.getElementById("result")
+            for (let i=0 ; i < objData.features.length; i++){
+                let beds = objData.features[i].properties.num_bed
+                let props = objData.features[i].properties.name
+
+                let li = document.createElement("li")
+                li.innerHTML = props + "(" + beds + "เตียง)"
+                result.appendChild(li)
+            }
+        }
+
+        window.onload = getData
+    </script>
+</head>
+<body>
+    <h1>โรงพยาบาลเอกชน ในกทม.</h1>
+    <ul id="result" style="list-style:decimal;"></ul>
+</body>
+</html>

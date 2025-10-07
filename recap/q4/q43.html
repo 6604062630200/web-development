@@ -1,0 +1,28 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="sel">
+        <option value="">--- Select ---</option>
+    </select>
+</body>
+<script>
+    async function getData () {
+        let response = await fetch("../json/priv_hos.json")
+        let objData = await response.json()
+
+        let ele = document.getElementById("sel")
+        for(let i=0; i < objData.features.length; i++){
+            if(objData.features[i].properties.num_bed > 90){
+                ele.innerHTML = ele.innerHTML + '<option value="' + objData.features[i].properties.name + '">' + objData.features[i].properties.name + '</option>'
+            }
+        }
+    }
+
+    window.onload = getData
+</script>
+</html>>

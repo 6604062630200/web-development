@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result">
+
+    </div>
+</body>
+
+<script>
+    async function getData () {
+        let response = await fetch("../json/priv_hos.json")
+        let objData = await response.json()
+
+        let table = document.createElement("table")
+        let tr = table.insertRow(-1)
+        tr.innerHTML = '<th>No.</th><th>ชื่อโรงพยาบาล</th><th>ขนาดใหญ่</th><th>ขนาดกลาง</th><th>ขนาดเล็ก</th>'
+
+        console.log(objData)
+
+        objData.features.forEach((hos, i)=>{
+            let trin = table.insertRow(-1)
+
+            let cellNo = trin.insertCell(-1)
+            let cellName = trin.insertCell(-1)
+            let cellLarge = trin.insertCell(-1)
+            let cellMedium = trin.insertCell(-1)
+            let cellSmall = trin.insertCell(-1)
+
+            cellNo.innerHTML = i + 1
+            cellName.innerHTML = hos.properties.name
+
+            if(hos.properties.num_bed > 90){
+                cellLarge.innerHTML = '✓'
+                cellMedium.innerHTML = ''
+                cellSmall.innerHTML = ''
+            }else if( hos.properties.num_bed > 30 && hos.properties.num_bed <= 90){
+                cellLarge.innerHTML = ''
+                cellMedium.innerHTML = '✓'
+                cellSmall.innerHTML = ''
+            }else{
+                cellLarge.innerHTML = ''
+                cellMedium.innerHTML = ''
+                cellSmall.innerHTML = '✓'
+            }
+        })
+        
+        document.getElementById("result").appendChild(table)
+    }
+
+
+    window.onload = getData
+</script>
+
+</html>
